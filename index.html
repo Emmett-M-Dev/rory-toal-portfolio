@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rory Toal, director and editor</title>
+  <meta name="description" content="Films, showreel and credits of Rory Toal, director and editor.">
+  <!-- Sample build: keep it out of search results until the real films go in. Remove this line at launch. -->
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+</head>
+<body class="home">
+
+  <!-- Opening countdown, plays once per visit. Click or press any key to skip. -->
+  <div class="leader" id="leader" aria-hidden="true">
+    <div class="leader-frame">
+      <span class="leader-sweep"></span>
+      <span class="leader-ring"></span>
+      <span class="leader-cross"></span>
+      <span class="leader-num" id="leaderNum">3</span>
+    </div>
+  </div>
+
+  <aside class="sample-note" id="sampleNote">
+    <p>Sample build. Films and copy are placeholders; footage is from Blender Studio's open movies (Creative Commons).</p>
+    <button type="button" id="sampleClose" aria-label="Hide this note">Hide</button>
+  </aside>
+
+  <header class="site-head">
+    <a class="wordmark" href="./">Rory Toal</a>
+    <nav aria-label="Main">
+      <a href="#films">Films</a>
+      <a href="#about">About</a>
+      <a href="#credits">Credits</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Showreel">
+      <div class="hero-media" id="heroMedia" aria-hidden="true"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-title">
+        <h1>Rory<br>Toal</h1>
+        <p class="hero-sub" id="heroSub">Director and editor</p>
+        <button class="btn" type="button" id="watchReel">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>
+          Watch the reel with sound
+        </button>
+      </div>
+    </section>
+
+    <section class="films" id="films" aria-labelledby="filmsHead">
+      <div class="section-head">
+        <h2 id="filmsHead">Films</h2>
+        <p class="section-note">Newest first. Select a film for the full screening, credits and notes.</p>
+      </div>
+      <div class="programme">
+        <ol class="film-list" id="filmList"></ol>
+        <figure class="monitor" aria-hidden="true">
+          <img id="monitorImg" alt="">
+          <figcaption id="monitorCap"></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="aboutHead">
+      <div class="about-still">
+        <img id="aboutImg" alt="Still from Static" loading="lazy">
+      </div>
+      <div class="about-copy">
+        <h2 id="aboutHead">About</h2>
+        <p class="lede">I'm a film graduate who directs and edits short drama, and I'm looking for my first roles in production and post-production.</p>
+        <p>Placeholder bio. This is where Rory writes a few honest paragraphs: what draws him to a story, the films and directors that shaped how he works, and what he's like to have on a set. Two or three short paragraphs is plenty; employers skim.</p>
+        <p>Placeholder. Something specific helps more than adjectives, like the fact that he cut his graduation film in a week or shot a whole short on one lens.</p>
+
+        <dl class="facts">
+          <div><dt>Education</dt><dd>BA (Hons) Film, placeholder university, 2023 to 2026</dd></div>
+          <div><dt>Edit and colour</dt><dd>Premiere Pro, DaVinci Resolve, After Effects</dd></div>
+          <div><dt>Camera</dt><dd>Sony FX3, Blackmagic Pocket 6K, Canon C70</dd></div>
+          <div><dt>Also</dt><dd>Full clean driving licence. Based in placeholder town, happy to travel.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="credits" id="credits" aria-labelledby="creditsHead">
+      <h2 id="creditsHead">Credits</h2>
+      <p class="section-note">Crew and freelance work beyond my own films.</p>
+      <dl class="roll" id="creditsRoll"></dl>
+    </section>
+
+    <section class="end-card" id="contact" aria-labelledby="contactHead">
+      <h2 id="contactHead" class="end-name">Rory Toal</h2>
+      <p class="end-line">Available for crew, edit and assistant roles.</p>
+      <p><a class="end-email" id="endEmail" href="#"></a></p>
+      <div class="end-actions">
+        <a class="btn" id="cvLink" href="#" download>Download CV (PDF)</a>
+      </div>
+      <ul class="end-links" id="endLinks"></ul>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <p>&copy; <span id="year"></span> Rory Toal</p>
+  </footer>
+
+  <!-- Player that opens over the page -->
+  <dialog class="screen" id="screen" aria-label="Showreel">
+    <button class="screen-close" type="button" id="screenClose">Close</button>
+    <div class="screen-frame" id="screenFrame"></div>
+  </dialog>
+
+  <script src="assets/js/films.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

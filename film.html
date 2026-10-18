@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Film, Rory Toal</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+</head>
+<body class="film-page rolling no-intro">
+  <header class="site-head solid">
+    <a class="wordmark" href="./">Rory Toal</a>
+    <nav aria-label="Main">
+      <a href="./#films">All films</a>
+      <a href="./#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="film">
+    <div class="player" id="player">
+      <button class="player-poster" type="button" id="playBtn">
+        <img id="posterImg" alt="">
+        <span class="play-label">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>
+          <span id="playText">Play film</span>
+        </span>
+      </button>
+    </div>
+
+    <article class="film-body">
+      <header class="film-head">
+        <h1 id="title"></h1>
+        <p class="logline" id="logline"></p>
+      </header>
+
+      <dl class="film-facts" id="facts"></dl>
+
+      <div class="film-text">
+        <p id="synopsis"></p>
+        <ul class="laurels" id="laurels"></ul>
+        <p class="footage-credit" id="footageCredit"></p>
+      </div>
+
+      <section class="film-credits" aria-labelledby="creditsHead">
+        <h2 id="creditsHead">Credits</h2>
+        <dl class="roll" id="filmCredits"></dl>
+      </section>
+    </article>
+
+    <nav class="film-nav" aria-label="More films">
+      <a id="prevFilm" class="film-nav-link prev"></a>
+      <a id="nextFilm" class="film-nav-link next"></a>
+    </nav>
+  </main>
+
+  <footer class="site-foot">
+    <p>&copy; <span id="year"></span> Rory Toal</p>
+  </footer>
+
+  <script src="assets/js/films.js"></script>
+  <script src="assets/js/film.js"></script>
+</body>
+</html>
