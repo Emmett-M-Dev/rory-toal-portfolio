@@ -90,61 +90,59 @@ const FILMS = [
     ],
     video: { source: "youtube", id: "Y-rmzh0PI3c" },
     footageCredit: "Placeholder footage: Cosmos Laundromat, Blender Institute (CC BY)"
+  }
+];
+
+/*
+  SOCIAL EDITS
+  ------------
+  Short-form editing work: reels, TikToks, YouTube Shorts.
+
+  video.source : "youtube" (Shorts too), "vimeo", "instagram" or "tiktok"
+                 instagram.com/reel/THIS_PART     tiktok.com/@user/video/THIS_PART
+  vertical     : true for 9:16 clips, so the player opens portrait
+  poster       : needed for Instagram and TikTok clips (a screenshot works)
+  stat         : optional, e.g. "120k views"
+
+  SAMPLE BUILD: these placeholders are landscape Blender Studio clips, so
+  they open landscape. Rory's real reels will set vertical: true.
+*/
+const CLIPS = [
+  {
+    title: "Opening night teaser",
+    client: "Placeholder theatre company",
+    platform: "Instagram Reel",
+    role: "Edit, captions, sound",
+    stat: "Placeholder: 24k views",
+    video: { source: "youtube", id: "eRsGyueVLvQ", start: 300 },
+    vertical: false
   },
   {
-    slug: "embers",
-    title: "Embers",
-    year: 2024,
-    runtime: "15 min",
-    role: "Director of photography",
-    genre: "Fantasy drama",
-    format: "Digital, 2.39:1",
-    logline: "A young woman searches a frozen world for the dragon she raised.",
-    synopsis: "Placeholder copy. A cinematography credit is a chance to talk about lighting choices, lenses and the look of the film.",
-    festivals: [],
-    credits: [
-      ["Director", "Name Surname"],
-      ["Director of photography", "Rory Toal"],
-      ["Editor", "Name Surname"]
-    ],
-    video: { source: "youtube", id: "eRsGyueVLvQ" },
-    footageCredit: "Placeholder footage: Sintel, Blender Foundation (CC BY)"
+    title: "Barbershop launch",
+    client: "Placeholder local business",
+    platform: "TikTok",
+    role: "Edit, colour",
+    stat: "Placeholder: 61k views",
+    video: { source: "youtube", id: "mN0zPOpADL4", start: 60 },
+    vertical: false
   },
   {
-    slug: "cover-story",
-    title: "Cover Story",
-    year: 2024,
-    runtime: "4 min",
-    role: "Editor, colourist",
-    genre: "Action comedy",
-    format: "Digital, 2.39:1",
-    logline: "An undercover agent's disguise holds up for exactly one haircut.",
-    synopsis: "Placeholder copy for a short, fast-cut piece.",
-    festivals: [],
-    credits: [
-      ["Director", "Name Surname"],
-      ["Editor and colourist", "Rory Toal"]
-    ],
-    video: { source: "youtube", id: "mN0zPOpADL4" },
-    footageCredit: "Placeholder footage: Agent 327, Blender Animation Studio (CC BY)"
+    title: "Festival recap",
+    client: "Placeholder music festival",
+    platform: "YouTube Short",
+    role: "Shot and edited",
+    stat: "",
+    video: { source: "youtube", id: "aqz-KE-bpKQ", start: 120 },
+    vertical: false
   },
   {
-    slug: "meadow",
-    title: "Meadow",
-    year: 2023,
-    runtime: "10 min",
-    role: "Assistant director",
-    genre: "Comedy",
-    format: "Digital, 16:9",
-    logline: "A gentle giant takes revenge on three bullies, one prank at a time.",
-    synopsis: "Placeholder copy for a first-year film.",
-    festivals: [],
-    credits: [
-      ["Director", "Name Surname"],
-      ["Assistant director", "Rory Toal"]
-    ],
-    video: { source: "youtube", id: "aqz-KE-bpKQ" },
-    footageCredit: "Placeholder footage: Big Buck Bunny, Blender Foundation (CC BY)"
+    title: "Behind the scenes",
+    client: "Static, my graduation film",
+    platform: "Instagram Reel",
+    role: "Edit, motion graphics",
+    stat: "",
+    video: { source: "youtube", id: "R6MlUcmOul8", start: 400 },
+    vertical: false
   }
 ];
 
@@ -174,6 +172,8 @@ document.addEventListener("load", (e) => {
 
 function embedUrl(video, opts = {}) {
   const autoplay = opts.autoplay ? 1 : 0;
+  if (video.source === "instagram") return `https://www.instagram.com/reel/${video.id}/embed`;
+  if (video.source === "tiktok") return `https://www.tiktok.com/embed/v2/${video.id}`;
   if (video.source === "vimeo") {
     const bg = opts.background ? "&background=1" : "";
     return `https://player.vimeo.com/video/${video.id}?autoplay=${autoplay}&dnt=1${bg}`;

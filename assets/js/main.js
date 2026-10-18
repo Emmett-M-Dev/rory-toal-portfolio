@@ -57,11 +57,13 @@
   /* ---------- Player dialog ---------- */
   const screen = $("screen");
   const frame = $("screenFrame");
-  function openScreen(video) {
+  function openScreen(video, opts = {}) {
     frame.innerHTML = "";
+    screen.classList.toggle("vertical", !!opts.vertical);
+    screen.setAttribute("aria-label", opts.title || "Showreel");
     const f = document.createElement("iframe");
     f.src = embedUrl({ ...video, start: video.start || 0 }, { autoplay: true });
-    f.title = "Showreel";
+    f.title = opts.title || "Showreel";
     f.allow = "autoplay; encrypted-media; fullscreen; picture-in-picture";
     f.allowFullscreen = true;
     frame.appendChild(f);
@@ -98,6 +100,26 @@
   });
 
   $("aboutImg").src = posterFor(FILMS[0]);
+
+  /* ---------- Social edits ---------- */
+  const strip = $("clipStrip");
+  CLIPS.forEach((clip) => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <button class="clip" type="button">
+        <span class="clip-frame">
+          <img src="${posterFor(clip)}" alt="" loading="lazy">
+          <span class="clip-platform">${clip.platform}</span>
+          <span class="clip-play" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z"/></svg></span>
+        </span>
+        <span class="clip-title">${clip.title}</span>
+        <span class="clip-meta">${clip.client}<br>${clip.role}${clip.stat ? `<br><span class="clip-stat">${clip.stat}</span>` : ""}</span>
+      </button>`;
+    li.firstElementChild.addEventListener("click", () =>
+      openScreen(clip.video, { vertical: clip.vertical, title: clip.title })
+    );
+    strip.appendChild(li);
+  });
 
   /* ---------- Credits roll ---------- */
   const roll = $("creditsRoll");

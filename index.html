@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=2">
+  <link rel="stylesheet" href="assets/css/style.css?v=3">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 </head>
 <body class="home">
@@ -34,6 +34,7 @@
     <a class="wordmark" href="./">Rory Toal</a>
     <nav aria-label="Main">
       <a href="#films">Films</a>
+      <a href="#edits">Edits</a>
       <a href="#about">About</a>
       <a href="#credits">Credits</a>
       <a href="#contact">Contact</a>
@@ -57,7 +58,7 @@
     <section class="films" id="films" aria-labelledby="filmsHead">
       <div class="section-head">
         <h2 id="filmsHead">Films</h2>
-        <p class="section-note">Newest first. Select a film for the full screening, credits and notes.</p>
+        <p class="section-note">Select a film to watch it in full, with credits and notes.</p>
       </div>
       <div class="programme">
         <ol class="film-list" id="filmList"></ol>
@@ -66,6 +67,14 @@
           <figcaption id="monitorCap"></figcaption>
         </figure>
       </div>
+    </section>
+
+    <section class="edits" id="edits" aria-labelledby="editsHead">
+      <div class="section-head">
+        <h2 id="editsHead">Social edits</h2>
+        <p class="section-note">Short-form edits for brands, venues and creators.</p>
+      </div>
+      <ul class="clip-strip" id="clipStrip"></ul>
     </section>
 
     <section class="about" id="about" aria-labelledby="aboutHead">
@@ -114,7 +123,7 @@
     <div class="screen-frame" id="screenFrame"></div>
   </dialog>
 
-  <script src="assets/js/films.js?v=2"></script>
-  <script src="assets/js/main.js?v=2"></script>
+  <script src="assets/js/films.js?v=3"></script>
+  <script src="assets/js/main.js?v=3"></script>
 </body>
 </html>
