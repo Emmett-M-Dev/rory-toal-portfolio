@@ -21,7 +21,7 @@ const SITE = {
   name: "Rory Toal",
   tagline: "Director and editor",
   email: "rory@example.com",
-  reel: { source: "youtube", id: "R6MlUcmOul8", start: 62 },
+  reel: { source: "youtube", id: "R6MlUcmOul8", start: 150 },
   links: [
     { label: "Vimeo", url: "#" },
     { label: "IMDb", url: "#" },
@@ -162,6 +162,15 @@ function posterFor(film) {
   if (film.video.source === "youtube") return `https://i.ytimg.com/vi/${film.video.id}/maxresdefault.jpg`;
   return "";
 }
+
+/* Some YouTube videos have no full-size thumbnail (YouTube serves a tiny
+   120px grey placeholder instead). Swap those for the standard-size one. */
+document.addEventListener("load", (e) => {
+  const img = e.target;
+  if (img.tagName === "IMG" && img.src.includes("/maxresdefault.jpg") && img.naturalWidth <= 120) {
+    img.src = img.src.replace("maxresdefault", "hqdefault");
+  }
+}, true);
 
 function embedUrl(video, opts = {}) {
   const autoplay = opts.autoplay ? 1 : 0;
