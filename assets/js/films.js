@@ -114,7 +114,7 @@ const CLIPS = [
     platform: "Instagram Reel",
     role: "Edit, captions, sound",
     stat: "Placeholder: 24k views",
-    video: { source: "youtube", id: "eRsGyueVLvQ", start: 300 },
+    video: { source: "youtube", id: "WhWc3b3KhnY", start: 200 },
     vertical: false
   },
   {
